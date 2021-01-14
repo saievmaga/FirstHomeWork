@@ -32,7 +32,7 @@ public class Main {
         yearHappy(400);
     }
 
-    static float outExpression(float a, float b, float c, float d) {
+    static double outExpression(float a, float b, float c, float d) {
         return (a * (b + (c / d)));
     }
 
