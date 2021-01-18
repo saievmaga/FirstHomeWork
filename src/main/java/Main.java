@@ -1,81 +1,98 @@
-//    byte aByte; //8 битов -128 127
-//    short aShort; //16 -32768 32767
-//    int anInt; //32
-//    long aLong; //64
-//
-//    private static float aFloat = 0.3f; //32
-//    double aDouble; //64
-//
-//    public static char aChar; //16
-//
-//    boolean aBoolean;
-//
-//    String string;pub
 public class Main {
-    public static void main(String[] args) {
-        byte number = 5;
-        short letters = 26;
-        int apartments = 48;
-        long userNameData = 100000L;
-        float myCash = 31.7f;
-        double myMoney = 31560.70;
-        boolean statusOnline = true;
-        char mathOperation = 'x';
-        String color;
+    public static boolean main(String[] args) {
+//        int a = 3;
+//        switch (a){
+//            case 1:
+//                System.out.println("a = 1");
+//                break;
+//            case 2:
+//                System.out.println("a = 2");
+//                break;
+//            case 3:
+//                System.out.println("a = 3");
+//                break;
+//            default:
+//                System.out.println("a = 4");
+//        }
 
+//        int[] mass1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+//        for (int i = 0; i < mass1.length; i++) {
+//            if (mass1[i] == 1) {
+//                mass1[i]  = 0;
+//            } else {
+//                mass1[i] = 1;
+//            }
+//            System.out.println(mass1[i]);
+//        }
+//
+//
+//        int[] mass2 = new int[8];
+//        for (int i = 0, j = 2; i < mass2.length; i++) {
+//            mass2[i] = i + j * i;
+//            System.out.println(mass2[i]);
+//        }
+//
+//        int[] mass3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+//        for (int i = 0; i < mass3.length; i++) {
+//            if (mass3[i] < 6) {
+//                mass3[i] *=2;
+//            }
+//            System.out.println(mass3[i]);
+//        }
+//
+//        int[][] mass4 = new int[7][7];
+//        for (int i = 0; i < mass4.length; i++) {
+//            for (int j = 0, j2 = mass4[i].length; j < mass4[i].length; j++, j2--) {
+//                if (i == j || i == (j2 - 1)) mass4[i][j] = 1;
+//                System.out.print(mass4[i][j] + " ");
+//            }
+//            System.out.print("\r\n");
+//        }
 
-        outExpression(1.0f, 5.6f, 9.8f, 87.985f);
-        outNumbers(apartments, 6);
-        outConsole(5);
-        outOperation(-10);
-        SendHello("Maga");
-        yearHappy(400);
-    }
+        int[] mass5 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int min = mass5[0], max = mass5[0], minIndex = 0, maxIndex = 0;
+        for (int i = 0; i < mass5.length; i++) {
+            if (mass5[i] > max) {
+                max = mass5[i];
+                maxIndex = i;
+            }
+            if (mass5[i] < min){
+                min = mass5[i];
+                minIndex = i;
+            }
+        }
 
-    static double outExpression(float a, float b, float c, float d) {
-        return (a * (b + (c / d)));
-    }
-
-    static boolean outNumbers(int a, int b) {
-        int sum = a + b;
-        if (sum >= 10 && sum <= 20) {
-            return true;
-        } else {
+        static boolean checkBalance( int[] mass6){
+            int leftNum, rightNum;
+            for (int i = 0; i < mass6.length + 1; i++) {
+                leftNum = 0;
+                rightNum = 0;
+                for (int j = 0; j < i; j++) {
+                    leftNum += mass6[j];
+                }
+                for (int j = i; j < mass6.length; j++) {
+                    rightNum += mass6[j];
+                }
+                if (leftNum == rightNum){
+                    return true;
+                }
+            }
             return false;
-        }
-    }
 
-    static void outConsole(int a) {
-        if (a >= 0) {
-            System.out.println("Число" + a + "положительное");
-        } else {
-            System.out.println("Число" + a + "отрицательное");
-        }
-    }
 
-    static boolean outOperation(int a) {
-        if (a < 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+//        static void endMethod ( int[] mass7, int n){
+//            for (int i = 0; i < mass7.length; i++) {
+//                if (n == 1) {
+//                    mass7[i] = mass7[i] + 1;
+//                } else {
+//                    mass7[i] = mass7[i] - 1;
+//                }
+//            }
+//        }
 
-    static void SendHello(String a) {
-        System.out.println("Привет," + a + "!");
-    }
 
-    /*8. * Написать метод, который определяет, является ли год високосным, и выводит сообщение в консоль.
-    Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.*/
-    static void yearHappy(int year)  {
-        if (year % 400 == 0) {
-            System.out.println("god visakosnyi");
-        } else if (year % 100 == 0) {
-            System.out.println("ne visokosnyi");
-        } else if (year % 4 == 0) {
-            System.out.println("visokosnyi");
-        } else {
-            System.out.println("ne visokosnyi");
-        }
-    } //логические задачи для начинающих программистов
+
+
+
+    }
 }
